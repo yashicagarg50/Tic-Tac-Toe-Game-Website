@@ -1,0 +1,118 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@600&family=Roboto:wght@500&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+}
+
+nav{
+  background-color: #15021c;
+  color: white;
+  height: 75px;
+  font-size: 27px;
+  display: flex;
+/*   sets flexible length on flexible items */
+  align-items: center;
+  padding: 0 12px;
+/* o is for top bottom padding and then right left is 12px   */
+  font-family: 'Roboto', sans-serif;
+
+}
+nav ul{
+  list-style-type: none; 
+/*to remove the bullets*/
+  
+}
+.gameContainer{
+  
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.container{
+  display: grid;
+  grid-template-rows: repeat(3, 10vw);
+  grid-template-columns: repeat(3, 10vw);
+  font-family: 'Roboto', sans-serif;
+  
+/*   this specifies the no of rows/columns and their height */
+}
+.box{
+  border: 2px solid black;
+  font-size: 8vw;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+/*   this cursor pointer helps to make the pointer in shape of the hand which actually points when we hover on it */
+}
+/*Can use .container div or box as we have specified box as a class there  */
+/* we give sizes in vw because we want our site to be responsive as it means 3 percent of the viewport's width  */
+.box:hover{
+  background-color: #d4c5e2;
+}
+/*if we hover on it then it changes its background color to tint of purple  */
+.info {
+  font-size: 22px;
+}
+.gameInfo{
+  padding: 0 34px;
+/*     padding is internal spacing and margin is external spacing  */
+  font-family: 'Baloo Bhaina 2', cursive;
+}
+.imgbox img{
+  width: 0;
+  transition: width 1s ease-in-out;
+/*   transition gives animation and ease in out is for slow start and slow end */
+}
+.br-0{
+ border-right: 0; 
+}
+.bl-0{
+  border-left: 0;
+}
+.bt-0{
+  border-top: 0;
+}
+.bb-0{
+  border-bottom: 0;
+}
+#reset {
+/*   styling the button */
+  padding: 3px;
+  margin: 0 23px;
+  background-color: #d3a7d3;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 6px;
+  
+}
+.line{
+    background-color: black;
+    height: 3px;
+    width: 0;
+    position: absolute;
+    background-color: #911d91;
+    transition: width 1s ease-in-out;
+}
+
+@media screen and (max-width: 950px)
+{
+    .gameContainer{
+        flex-wrap: wrap;
+    }
+    .gameInfo{
+        margin-top: 34px;
+    }
+    .gameInfo h1{
+        font-size: 1.5rem;
+    }
+    .container { 
+        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 20vw);
+    }
+}
